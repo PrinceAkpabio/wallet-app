@@ -1,0 +1,333 @@
+@import url('../../theme/fonts.scss');
+
+
+// Base colors
+$primaryColor: #3D87FF;
+$success: #34C98E;
+$error: #F32323;
+$dark: #1E253A;
+
+// Gradient colors
+$primaryColor: rgb(84, 141, 248);
+$secondary: rgb(82, 197, 140);
+$secondary2: #3d87ff;
+$tertiary: rgb(251, 150, 94);
+
+
+// Extra colors
+
+$lavendar: #e4e7f8;
+$lavendarShade: #bbd0f8;
+$antiqueWhite: #f6eade;
+$antiqueWhiteShade: #f8c999;
+$lightcyan: #def8ed;
+$lightcyanShade: #aaeace;
+$linen: #f3e7e7;
+$linenShade: #f3b1b0;
+
+// Greys
+$grey100: #fafafa;
+$grey200: #a7aab1;
+$grey300: rgba(229, 230, 233, 0.712);
+$grey500: #838591;
+$grey600: #1e243a;
+
+// Typography
+
+$extraBoldFont: 'Gilroy-ExtraBold';
+$boldFont: 'Gilroy-Bold';
+$mediumFont: 'Gilroy-Medium';
+$regularFont: 'Gilroy-Regular';
+$lightFont: 'Gilroy-Light';
+
+
+// Text Colors
+
+$infoText: #2d4ef5;
+$successText: #4ce1a7;
+$errorText: #e24c4d;
+$headingText: #1e243a;
+$bodyText: #838591;
+
+
+// Text sizes
+
+$heading: 22px;
+$heading1: 20px;
+$heading2: 18px;
+$heading3: 16px;
+$importantBodyTextSize: 14px;
+$smallBodyTextSize: 12px;
+$bodyTextSize: 11px;
+
+
+// Dimensions
+
+$appWidth: 327px;
+$gutter: 16px;
+$margin: 24px;
+$columnWidth: 53px;
+
+
+// Border
+
+$activeTabBold: 1px solid $primaryColor;
+
+
+
+
+$insetColor: #E5E4E2;
+$insetColor1: #D3D3D3;
+$insetColor2: #c3c3c3;
+$insetColor3: #cfcccc67;
+$insetBlkColor: #0000008a;
+$secondaryColor: #eeb55f;
+$borderBottom: 0.1px inset $insetColor3;
+$borderBottom2: 0.01px inset $insetColor3;
+
+
+
+.main-container {
+  height: 100%;
+  background-color: whitesmoke;
+
+  &.transaction-history {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: $gutter 0;
+
+    .transaction_section {
+      width: $appWidth;
+      height: 20%;
+      // background-color: red;
+
+      // Navigation info
+      &.navigation-info {
+        display: flex;
+        justify-content: flex-start;
+        height: 7%;
+        margin: 0 0 2rem;
+
+
+        .page-name-wrapper {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          width: 50%;
+          font-size: $heading;
+          color: $headingText;
+          font-family: $extraBoldFont;
+        }
+
+
+        .arrow-back-wrapper {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          padding: 0.15rem 0 0;
+          width: 10%;
+
+          ion-icon {
+            height: 1.5rem;
+            width: 1.5rem;
+            // margin-right: 0.4rem;
+            color: $grey600;
+          }
+        }
+
+
+      }
+
+      // Sort by buttons
+      &.sort-order-buttons {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 5%;
+        margin-bottom: 1rem;
+
+        .sort-order-button-single {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+          width: 5rem;
+          margin: 0 0.3rem;
+          border-radius: 18px;
+          font-size: $importantBodyTextSize;
+          background-color: white;
+          box-shadow: -4px 0px 16px 11px rgba(238, 242, 242, 0.45);
+
+          ion-icon {
+            height: 1rem;
+            width: 1rem;
+            margin: 0 0.4rem 0 0;
+          }
+
+          .sort-order-button-name {
+            margin: 0.4rem 0 0.6rem;
+            color: $grey200;
+            font-family: $mediumFont;
+          }
+
+          &.one {
+            width: 3rem;
+            background-color: $secondary2;
+
+            .sort-order-button-name {
+
+              color: white;
+            }
+          }
+
+          &.two {
+            width: 8rem;
+
+            ion-icon {
+              color: $antiqueWhiteShade;
+            }
+          }
+
+          &.three {
+            width: 5rem;
+
+            ion-icon {
+              color: $lightcyanShade;
+            }
+          }
+        }
+      }
+
+      // Transaction History
+
+      &.transactions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        // overflow-y: scroll;
+
+
+        .transactions-heading {
+          display: flex;
+          justify-content: space-between;
+          border: none;
+          box-shadow: none;
+          color: $grey500;
+          border-radius: 0;
+          width: $appWidth;
+          margin: 0.5rem 0 0;
+
+          .time-box {
+            font-family: $mediumFont;
+            width: 40.19%;
+            font-size: $heading3;
+          }
+
+          .cash-box {
+            color: $primaryColor;
+          }
+
+        }
+
+        .transactions-content {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+          overflow-y: scroll;
+
+          .single-earning-detail {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            color: black;
+            margin: 0.5rem 0;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: -4px 0px 16px 11px rgba(238, 242, 242, 0.45);
+
+
+
+
+
+
+            .time-box,
+            .riders-box,
+            .cash-box {
+              padding: 0.7rem 0;
+            }
+
+            .time-box_value,
+            .riders-box_value,
+            .cash-box_value {
+              margin: 0 0 0.3rem;
+              font-weight: 600;
+            }
+
+            .time-box_legend,
+            .riders-box_legend,
+            .cash-box_legend {
+              margin: 0;
+              font-size: $smallBodyTextSize;
+              color: $grey200;
+            }
+
+            .time-box {
+              // text-align: left;
+              padding-left: 0.5rem;
+              width: 20.19%;
+
+              ion-icon {
+                height: 3.2rem;
+                width: 3.2rem;
+
+                svg {
+
+                  color: #2d4ef5;
+                }
+              }
+
+
+
+            }
+
+            .riders-box {
+              width: 60.66%;
+              padding-left: 0.4rem;
+              text-align: left;
+
+              .riders-box_value {}
+
+              .riders-box_legend {
+                color: $insetBlkColor;
+                font-size: 0.9rem;
+              }
+            }
+
+            .cash-box {
+              width: 20.15%;
+
+              .cash-box_value {
+
+                &.success {
+                  color: $successText;
+                }
+
+                &.danger {
+                  color: $errorText;
+                }
+              }
+
+              .cash-box_legend {}
+            }
+
+          }
+        }
+
+      }
+    }
+  }
+}

@@ -1,0 +1,272 @@
+@import url('../../theme/fonts.scss');
+
+
+// Base colors
+$primaryColor: #3D87FF;
+$success: #34C98E;
+$error: #F32323;
+$dark: #1E253A;
+
+// Gradient colors
+$primaryColor: #548df8;
+$secondary: rgb(82, 197, 140);
+$secondary2: #3d87ff;
+$tertiary: rgb(251, 150, 94);
+
+
+// Extra colors
+
+$lavendar: #e4e7f8;
+$lavendarShade: #bbd0f8;
+$antiqueWhite: #f6eade;
+$antiqueWhiteShade: #f8c999;
+$lightcyan: #def8ed;
+$lightcyanShade: #aaeace;
+$linen: #f3e7e7;
+$linenShade: #f3b1b0;
+
+// Greys
+$grey100: #fafafa;
+$grey200: #a7aab1;
+$grey300: #e5e6e9b6;
+$grey500: #838591;
+$grey600: #1e243a;
+
+// Typography
+
+$extraBoldFont: 'Gilroy-ExtraBold';
+$boldFont: 'Gilroy-Bold';
+$mediumFont: 'Gilroy-Medium';
+$regularFont: 'Gilroy-Regular';
+$lightFont: 'Gilroy-Light';
+
+
+// Text Colors
+
+$infoText: #2d4ef5;
+$successText: #4ce1a7;
+$errorText: #e24c4d;
+$headingText: #1e243a;
+$bodyText: #838591;
+
+
+// Text sizes
+
+$heading: 22px;
+$heading1: 20px;
+$heading2: 18px;
+$heading3: 16px;
+$importantBodyTextSize: 14px;
+$smallBodyTextSize: 12px;
+$bodyTextSize: 11px;
+
+
+// Dimensions
+
+$appWidth: 327px;
+$gutter: 16px;
+$margin: 24px;
+$columnWidth: 53px;
+
+
+// Border
+
+$activeTabBold: 1px solid $primaryColor;
+
+
+
+
+$insetColor: #E5E4E2;
+$insetColor1: #D3D3D3;
+$insetColor2: #c3c3c3;
+$insetColor3: #cfcccc67;
+$insetBlkColor: #0000008a;
+$secondaryColor: #eeb55f;
+$borderBottom: 0.1px inset $insetColor3;
+$borderBottom2: 0.01px inset $insetColor3;
+
+
+
+.main-container {
+  height: 100%;
+  background-color: whitesmoke;
+  position: relative;
+
+  &.modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: $gutter 0;
+    height: 100%;
+
+    // Modal background
+    .modal-background {
+      content: "";
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(183, 186, 193, 0.5);
+      z-index: 1;
+    }
+
+    .modal_section {
+      width: $appWidth;
+
+
+      // Navigation info
+      &.navigation-info {
+        display: flex;
+        justify-content: flex-start;
+        height: 7%;
+        margin: 0 0 6rem;
+        z-index: 1;
+
+
+        .page-name-wrapper {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          width: 50%;
+          font-size: $heading;
+          color: $headingText;
+          font-family: $extraBoldFont;
+        }
+
+
+        .arrow-back-wrapper {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          padding: 0.15rem 0 0;
+          width: 10%;
+
+          ion-icon {
+            height: 1.5rem;
+            width: 1.5rem;
+            color: $grey600;
+          }
+        }
+
+
+      }
+
+
+      // modal
+
+      &.modal {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 65%;
+        z-index: 2;
+
+
+        .modal-content {
+          display: flex;
+          flex-direction: column;
+          // justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+          padding: 0 1.8rem;
+          background-color: white;
+          border-radius: 15px;
+          box-shadow: -4px 0px 16px 11px rgba(238, 242, 242, 0.45);
+
+
+          .modal-logo {
+            display: flex;
+            align-items: center;
+            height: 42%;
+            color: $primaryColor;
+            font-size: 26px;
+            font-family: $boldFont;
+
+            ion-icon {
+              height: 8rem;
+              width: 8rem;
+              // margin: 0 0.5rem 0.1rem 0;
+            }
+          }
+
+
+          // Modal content/body/text
+
+          .modal-msg {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            // justify-content: center;
+            text-align: center;
+
+            color: $dark;
+
+            &-title {
+              margin: 0;
+              font-family: $boldFont;
+              font-size: 26px;
+            }
+
+            &-body {
+
+              margin: 1.3rem 0;
+              font-family: $mediumFont;
+              color: $grey200;
+            }
+
+            &-link {
+              color: $primaryColor;
+              font-size: $importantBodyTextSize;
+              margin: 0 0 4rem;
+            }
+          }
+
+
+          // Buttons
+
+          .modal-actions {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 20%;
+            width: 100%;
+            text-align: center;
+
+            .modal-button {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 3rem;
+              font-size: 1.1rem;
+              text-transform: uppercase;
+
+              // Start Buttons
+              &.start {
+                background-color: $primaryColor;
+                color: white;
+                border-radius: 5px;
+              }
+
+            }
+
+            .call-to-action {
+              color: $grey200;
+              margin-bottom: 1rem;
+
+              .action {
+                color: $primaryColor;
+
+                a {
+                  text-decoration: none;
+                }
+              }
+            }
+          }
+        }
+
+      }
+    }
+  }
+}
