@@ -59,6 +59,7 @@ $heading3: 16px;
 $importantBodyTextSize: 14px;
 $smallBodyTextSize: 12px;
 $bodyTextSize: 11px;
+$extraSmallbodyTextSize: 8px;
 
 
 // Dimensions
@@ -160,70 +161,191 @@ $borderBottom2: 0.01px inset $insetColor3;
       &.cards {
         display: flex;
         flex-direction: column;
-        align-items: center;
         height: 90%;
+        width: 100%;
         z-index: 2;
 
         .cards-content {
-
-          display: grid;
-          grid-template-columns: repeat(2, 1.2fr);
-          grid-template-rows: repeat(11, 1.2fr);
-          grid-column-gap: 1rem;
-          grid-row-gap: 1.5rem;
-          height: 100%;
-          width: 100%;
-          grid-template-areas:
-            "header header"
-            "two three"
-            "four five"
-            "six  .";
+          display: flex;
+          flex-direction: column;
+          padding: 0 0.5rem;
 
 
+          // Mini cards wrapper
+          .mini-cards-wrapper {
 
-          // .test {
-          //   background-color: green;
-          //   width: 100%;
-          //   height: 9rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
 
-          //   &.one {
-          //     grid-area: header;
-          //   }
+            .wallet-card-wrapper.mini-card {
+              height: 7rem;
 
-          //   &.two {
-          //     grid-area: two;
-          //   }
+              .wallet-card-background {
+                content: "";
+                position: absolute;
+                height: 6.5rem;
+                width: 6.5rem;
+                border-radius: 50%;
+                z-index: 1;
+                bottom: -2.2rem;
+                right: -1.5rem;
+                background: rgb(123, 191, 252);
+                background: linear-gradient(352deg, rgba(123, 191, 252, 1) 0%, rgba(118, 167, 249, 0.4822303921568627) 80%);
 
-          //   &.three {
-          //     grid-area: three;
-          //   }
+                &.two {
+                  bottom: 1.5rem;
+                  right: -3.5rem;
+                  background: rgb(123, 191, 252);
+                  background: linear-gradient(225deg, rgba(123, 191, 252, 1) 0%, rgba(118, 167, 249, 0.4514180672268907) 80%);
+                }
 
-          //   &.four {
-          //     grid-area: four;
-          //   }
+              }
 
-          //   &.five {
-          //     grid-area: five;
-          //   }
+              .wallet-card-section {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 0.8rem;
+                margin: 0.2rem 0 0;
+                z-index: 1;
 
-          //   &.fsix {
-          //     grid-area: six;
-          //   }
+                &.one {
+
+                  .card-name {
+                    font-family: $lightFont;
+                    color: $grey300;
+                    font-size: $bodyTextSize;
+
+                  }
+
+                  ion-icon {
+                    height: 0.8rem;
+                    width: 0.8rem;
+                  }
+                }
+
+                &.two {
+                  display: flex;
+                  justify-content: flex-start;
+                  align-items: center;
+                  font-family: $boldFont;
+                  font-size: $heading;
+                  word-spacing: 0.1rem;
+
+                  .asterix {
+                    margin-right: 0.2rem;
+                    display: flex;
+                    align-items: flex-end;
+                    padding-top: 0.2rem;
+                    font-size: $bodyTextSize;
 
 
-          // }
+                    &.visible {
+                      padding-top: 0;
+                    }
+                  }
+
+                }
+
+                &.three {
+                  display: flex;
+                  flex-direction: column;
+                  // align-items: center;
+                  width: 100%;
+
+                  .single-earning-detail {
+                    display: flex;
+                    // align-items: center;
+                    width: 100%;
+                    // margin: 0.5rem 0;
+
+                    .time-box,
+                    .riders-box,
+                    .cash-box {
+                      // padding: 0.7rem 0;
+                    }
+
+                    .time-box_value,
+                    .riders-box_value,
+                    .cash-box_value {
+                      margin: 0.1rem 0 0;
+                      font-family: $boldFont;
+                      font-size: 8px;
+                    }
+
+                    .time-box_legend,
+                    .riders-box_legend,
+                    .cash-box_legend {
+                      margin: 0;
+                      font-family: $lightFont;
+                      font-size: 8px;
+                      color: $grey300;
+                    }
+
+                    .time-box {
+                      text-align: left;
+                      // width: 60.19%;
+                    }
+
+                    .riders-box {
+                      // width: 25.66%;
+                      text-align: left;
+                    }
+
+                    .cash-box {
+                      text-align: right;
+                      // width: 20.15%;
+                    }
+
+                  }
+
+                }
+              }
+
+              // Add new card
+              &.add-new-card {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: none;
+                border: 1px solid $success;
+                color: $success;
+
+                .add-card-wrapper {
+                  display: flex;
+                  justify-content: flex-end;
+                  color: $success;
+
+
+                  ion-icon {
+                    margin-right: 0.4rem;
+                  }
+
+                }
+
+              }
+            }
+          }
+
+
+
 
           .wallet-card-wrapper {
             display: flex;
             position: relative;
             flex-direction: column;
             height: 11.5rem;
-            width: $appWidth;
-            border-radius: 15px;
+            border-radius: 8px;
             overflow: hidden;
             background: rgb(107, 179, 252);
             background: linear-gradient(184deg, rgba(107, 179, 252, 1) 0%, rgba(52, 90, 245, 1) 93%);
 
+
+            &.main-card {
+
+              margin-bottom: 2rem;
+            }
 
 
             &.visa {
@@ -237,36 +359,19 @@ $borderBottom2: 0.01px inset $insetColor3;
             }
 
             &.mastercard {
-              display: flex;
-              position: relative;
-              flex-direction: column;
-              height: 11.5rem;
-              width: $appWidth;
-              border-radius: 15px;
-              overflow: hidden;
-              background: rgb(107, 179, 252);
-              background: linear-gradient(184deg, rgba(107, 179, 252, 1) 0%, rgba(52, 90, 245, 1) 93%);
-            }
-
-            // Types of Card sizes
-
-            &.main-card {
-
-              grid-area: header;
+              // display: flex;
+              // position: relative;
+              // flex-direction: column;
+              // height: 11.5rem;
+              // width: $appWidth;
+              // border-radius: 15px;
+              // overflow: hidden;
+              // background: rgb(107, 179, 252);
+              // background: linear-gradient(184deg, rgba(107, 179, 252, 1) 0%, rgba(52, 90, 245, 1) 93%);
             }
 
 
-            &.mini-card {
-              height: 9rem;
-              width: 11rem;
 
-              &.one {
-                grid-area: one;
-              }
-            }
-
-
-            // End of Type of card sizes
 
 
             .wallet-card-background {
